@@ -7,7 +7,7 @@
  * Return: void
  */
 
-void s_printf(va_list s)
+int s_printf(va_list s)
 {
 	char *str;
 	int i = 0;
@@ -16,7 +16,6 @@ void s_printf(va_list s)
 	if (str == NULL)
 	{
 		write(1, "(nil)", 7);
-		return;
 	}
 	for (i = 0; str[i] != '\0'; i++)
 		_putchar(i);

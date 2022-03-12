@@ -6,11 +6,12 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-struct _printf
+struct print
 {
 	char string;
 	void (*func)(va_list);
 };
+typedef struct print print_f;
 
 int _putchar(char c);
 

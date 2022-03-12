@@ -7,16 +7,15 @@
 int _printf(const char *format, ...)
 {
 	int i, j;
-
 	va_list valist;
 
-	va_struct format[] = {
-		{'c', print_c},
-		{'s', print_s},
-		{'i', print_i},
-		{'f', print_f},
-		{'\0', NULL}
+	print_f letter[] = {
+		{'c', c_printf},
+		{'s', s_printf},
+		{"%", percent_printf},
+		{NULL, NULL},
 	};
+
 
 	va_start(valist, format);
 
@@ -24,5 +23,18 @@ int _printf(const char *format, ...)
 	while (format != NULL && format[i] != '\0')
 	{
 		j = 0;
-}
+		while (letter[j].string != '\0')
+		{
+			if (letter[j].string == format[i])
+			{
+				letter[j].func(valist);
+			}
+			j++;
+		}
+		i++;
+	}
+	va_end(valist);
 
+	_putchar("\n");
+	return (i);
+}
