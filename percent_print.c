@@ -2,9 +2,7 @@
 
 int percent_printf(va_list percent)
 {
-	char percent = va_arg(args, int);
+	_putchar('%');
 
-	_putchar(percent);
-
-	return (0);
+	return (1);
 }

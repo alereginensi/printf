@@ -29,6 +29,14 @@ int _printf(const char *format, ...)
 			{
 				letter[j].func(valist);
 			}
+			if (letter[j].string == '%')
+			{
+				letter[i].func(valist);
+			}
+			else if (letter[j].string != '%')
+			{
+				continue;
+			}
 			j++;
 		}
 		i++;
