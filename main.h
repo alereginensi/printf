@@ -6,12 +6,11 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-struct print
+typedef struct print
 {
 	char string;
-	void (*func)(va_list);
-};
-typedef struct print print_f;
+	int (*func)(va_list);
+} print_f;
 
 int _putchar(char c);
 

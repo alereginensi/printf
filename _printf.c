@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 		{'c', c_printf},
 		{'s', s_printf},
 		{"%", percent_printf},
-		{NULL, NULL},
+		{'\0', NULL},
 	};
 
 
