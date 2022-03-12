@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 	print_f letter[] = {
 		{'c', c_printf},
 		{'s', s_printf},
-		{"%", percent_printf},
+		{'%', percent_printf},
 		{'\0', NULL},
 	};
 
@@ -35,6 +35,6 @@ int _printf(const char *format, ...)
 	}
 	va_end(valist);
 
-	_putchar("\n");
+	_putchar('\n');
 	return (i);
 }
