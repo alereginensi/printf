@@ -18,30 +18,31 @@ int _printf(const char *format, ...)
 
 
 	va_start(valist, format);
-
-	i = 0;
-	while (format != NULL && format[i] != '\0')
+	
+	j = 0;
+        while (format != NULL && format[j] != '\0')
 	{
-		j = 0;
-		while (letter[j].string != '\0')
+		if(format[j] == '%')
 		{
-			if (letter[j].string == format[i])
-			{
-				letter[j].func(valist);
-			}
-			if (letter[j].string == '%')
-			{
-				letter[i].func(valist);
-			}
-			else if (letter[j].string != '%')
-			{
-				continue;
-			}
+		 	i = 0;
+           		while (letter[i].string != '\0')
+                	{
+                        	if (format[j + 1] == letter[i].string)
+                        	{
+                                	letter[i].func(valist);
+                        		j++;
+					break;
+                		}
+                		i++;
+        		}
 			j++;
 		}
-		i++;
+		else
+           	{
+			_putchar(format[j]);
+			j++;
+	}
 	}
 	va_end(valist);
-	_putchar('\n');
-	return (i);
+	return (j);
 }
