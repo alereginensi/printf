@@ -7,7 +7,7 @@
  * Return: void
  */
 
-void print_s(va_list s)
+int print_s(va_list s)
 {
 	char *str;
 	int i = 0;
@@ -20,4 +20,6 @@ void print_s(va_list s)
 	}
 	for (i = 0; str[i] != '\0'; i++)
 		_putchar(i);
+
+	return (0);
 }
