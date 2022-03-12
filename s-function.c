@@ -12,8 +12,9 @@ void print_s(va_list s)
 	str = va_arg(s, char*);
 	if (str == NULL)
 	{
-		printf("%s", "(nil)");
+		write(1, "(nil)", 7);
 		return;
 	}
-	printf("%s", str);
+	for (i = 0; str[i] != '\0', i++)
+		_putchar(i);
 }
