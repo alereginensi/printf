@@ -16,11 +16,11 @@ int _putchar(char c);
 
 int _printf(const char *format, ...);
 
-int c_printf(va_list c);
+int c_printf(char c);
 
 int s_printf(va_list s);
 
-int percent_printf(va_list percent);
+int percent_printf(char percent);
 
 
 
