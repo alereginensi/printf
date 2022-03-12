@@ -18,6 +18,6 @@ void print_s(va_list s)
 		write(1, "(nil)", 7);
 		return;
 	}
-	for (i = 0; str[i] != '\0', i++)
+	for (i = 0; str[i] != '\0'; i++)
 		_putchar(i);
 }
