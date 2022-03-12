@@ -2,7 +2,6 @@
 
 int c_printf(va_list c)
 {
-	char c = va_arg(args, char);
-
-	_putchar(c);
+	_putchar(va_arg(c, int));
+	return (1);
 }
