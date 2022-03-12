@@ -7,11 +7,7 @@
  * Return: void
  */
 
-<<<<<<< HEAD
-void s_print(va_list s)
-=======
-int print_s(va_list s)
->>>>>>> 02bdc3772f5446054528d02708c6d1db0d6276be
+void s_printf(va_list s)
 {
 	char *str;
 	int i = 0;
