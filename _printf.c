@@ -17,6 +17,7 @@ int _printf(const char *format, ...)
 		{'i', integer_printf},
 		{'d', decimal_printf},
 		{'u', unsigned_printf},
+		{'r', reverse_printf},
 		{'\0', NULL},
 	};
 

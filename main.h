@@ -36,5 +36,6 @@ int integer_printf(va_list i);
 
 int unsigned_printf(va_list u);
 
+int reverse_printf(va_list s);
 
 #endif
