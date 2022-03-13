@@ -1,6 +1,10 @@
 #include "main.h"
 
 /**
+ * integer_printf - prints an integer
+ * @i: integer to print
+ *
+ * Return: length
  */
 int integer_printf(va_list i)
 {
