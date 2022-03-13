@@ -14,6 +14,8 @@ int _printf(const char *format, ...)
 		{'s', s_printf},
 		{'%', percent_printf},
 		{'\0', NULL},
+		{'i', integer_printf},
+		{'d', decimal_printf},
 	};
 
 
