@@ -13,12 +13,10 @@ int _printf(const char *format, ...)
 		{'c', c_printf},
 		{'s', s_printf},
 		{'%', percent_printf},
-		{'\0', NULL},
 		{'i', integer_printf},
-		 /** {'d', decimal_printf},
-		 */
+		{'d', decimal_printf},
+		{'\0', NULL},
 	};
-
 
 	va_start(valist, format);
 	
