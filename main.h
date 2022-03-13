@@ -34,5 +34,7 @@ int decimal_printf(va_list d);
 
 int integer_printf(va_list i);
 
+int unsigned_printf(va_list u);
+
 
 #endif

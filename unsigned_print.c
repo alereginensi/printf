@@ -1,27 +1,19 @@
 #include "main.h"
 
 /**
- * integer_printf - prints an integer
- * @i: integer to print
+ * unsigned_printf - prints an unsigned integer
+ * @u: integer to print
  *
  * Return: length
  */
-int integer_printf(va_list i)
+int unsigned_printf(va_list u)
 {
-	int integer, y, x;
+	unsigned int integer, y, x;
 	int num, len;
 
-	num = va_arg(i, int);
+	num = va_arg(u, int);
 
-	if (num < 0)
-	{
-		_putchar(45);
-		integer = num * -1;
-	}
-	else
-	{
-		integer = num;
-	}
+	integer = num;
 	y = integer;
 	x = 1;
 
