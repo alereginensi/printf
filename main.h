@@ -6,6 +6,14 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+/**
+ * struct print - defines a new struct
+ * @string: string passed by argument
+ * @func: function type
+ *
+ * Description: Above
+ */
+
 typedef struct print
 {
 	char string;

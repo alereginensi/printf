@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
- * c_printf - Prints a character.
+ * c_printf - Prints a character
  * @c: Character
  *
+ * Return: 1
  */
 int c_printf(va_list c)
 {

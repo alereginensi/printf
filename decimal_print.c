@@ -1,6 +1,9 @@
 #include "main.h"
 
-/**
+/**decimal_print - prints a decimal
+ * @d: decimal
+ *
+ * Return: length
  */
 int decimal_printf(va_list d)
 {
