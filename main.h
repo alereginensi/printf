@@ -21,11 +21,10 @@ int c_printf(va_list c);
 int s_printf(va_list s);
 
 int percent_printf(va_list percent);
-
-int decimal_printf(va_list d);
-
-int integer_printf(va_list i);
-
+/**
+ * int decimal_printf(va_list d);
+ * int integer_printf(va_list i);
+ */
 
 
 #endif

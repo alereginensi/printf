@@ -12,13 +12,15 @@ int s_printf(va_list s)
 	char *str;
 	int i = 0;
 
-	str = va_arg(s, char*);
+	str = va_arg(s, char *);
 	if (str == NULL)
 	{
-		write(1, "(nil)", 7);
+		return (0);
 	}
 	for (i = 0; str[i] != '\0'; i++)
-		_putchar(i);
+	{
+		_putchar(str[i]);
+	}
 
-	return (0);
+	return (i);
 }
