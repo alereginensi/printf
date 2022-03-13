@@ -14,8 +14,8 @@ int _printf(const char *format, ...)
 		{'c', c_printf},
 		{'s', s_printf},
 		{'%', percent_printf},
-		{'i', integer_printf},
-		{'d', decimal_printf},
+		{'i', number_printf},
+		{'d', number_printf},
 		{'u', unsigned_printf},
 		{'\0', NULL},
 	};
@@ -47,5 +47,5 @@ int _printf(const char *format, ...)
 	}
 	}
 	va_end(valist);
-	return (j);
+	return (j - 1);
 }
