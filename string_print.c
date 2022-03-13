@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- * print_s - prints a string
+ * s_printf - prints a string
  * @s: string to print
  *
- * Return: void
+ * Return: 1
  */
 
 int s_printf(va_list s)

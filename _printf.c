@@ -3,6 +3,7 @@
  * _printf - produces output according to a format.
  * @format: list of arguments tpes passed to the function.
  *
+ * Return: Same as printf standard functions
  */
 int _printf(const char *format, ...)
 {
@@ -19,27 +20,27 @@ int _printf(const char *format, ...)
 	};
 
 	va_start(valist, format);
-	
+
 	j = 0;
-        while (format != NULL && format[j] != '\0')
+	while (format != NULL && format[j] != '\0')
 	{
-		if(format[j] == '%')
+		if (format[j] == '%')
 		{
-		 	q = 0;
-           		while (letter[q].string != '\0')
-                	{
-                        	if (format[j + 1] == letter[q].string)
-                        	{
-                                	letter[q].func(valist);
-                        		j++;
+			q = 0;
+			while (letter[q].string != '\0')
+			{
+				if (format[j + 1] == letter[q].string)
+				{
+					letter[q].func(valist);
+					j++;
 					break;
-                		}
-                		q++;
-        		}
+				}
+				q++;
+			}
 			j++;
 		}
 		else
-           	{
+		{
 			_putchar(format[j]);
 			j++;
 	}
