@@ -6,7 +6,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int i, j;
+	int q, j;
 	va_list valist;
 
 	print_f letter[] = {
@@ -14,9 +14,8 @@ int _printf(const char *format, ...)
 		{'s', s_printf},
 		{'%', percent_printf},
 		{'\0', NULL},
-		/**
-		 * {'i', integer_printf},
-		 * {'d', decimal_printf},
+		{'i', integer_printf},
+		 /** {'d', decimal_printf},
 		 */
 	};
 
@@ -28,16 +27,16 @@ int _printf(const char *format, ...)
 	{
 		if(format[j] == '%')
 		{
-		 	i = 0;
-           		while (letter[i].string != '\0')
+		 	q = 0;
+           		while (letter[q].string != '\0')
                 	{
-                        	if (format[j + 1] == letter[i].string)
+                        	if (format[j + 1] == letter[q].string)
                         	{
-                                	letter[i].func(valist);
+                                	letter[q].func(valist);
                         		j++;
 					break;
                 		}
-                		i++;
+                		q++;
         		}
 			j++;
 		}
