@@ -28,7 +28,7 @@ int c_printf(va_list c);
 
 int s_printf(va_list s);
 
-int percent_printf(va_list percent);
+int percent_printf(void);
 
 int number_printf(va_list i);
 

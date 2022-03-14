@@ -43,9 +43,8 @@ int s_printf(va_list s)
  *
  * Return: 1
  */
-int percent_printf(va_list percent)
+int percent_printf(void)
 {
 	_putchar('%');
-
 	return (1);
 }

@@ -1,11 +1,13 @@
 #include "main.h"
 
 /**
+ * get_identifier - gets identifier
+ * @s: string
  *
- *
- *
+ * Return: pointer to the function that
+ * corresponds to the letter given as a parameter
  */
-int (*get_identifier(char *s))(int, int);
+int (*get_identifier(char *s))(int, int)
 {
 	print_f letter[] = {
 		{'c', c_printf},
