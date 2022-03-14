@@ -8,31 +8,39 @@
  */
 int number_printf(va_list arg)
 {
-	int integer, y, x;
-	int num, len;
-
-	num = va_arg(arg, int);
+	int num = va_arg(arg, int);
+	unsigned int counter = 0, unsnum;
+	int i = 0;
+	char aski[10];
 
 	if (num < 0)
 	{
 		_putchar(45);
-		integer = num * -1;
+		counter++;
+		unsnum = -num;
+	}
+	else
+		unsnum = num;
+	if (unsnum > 0)
+	{
+		while (unsnum != 0)
+		{
+			aski[i] = (unsnum % 10) + '0';
+			unsnum /= 10;
+			i++;
+		}
+		i--;
+		while (i >= 0)
+		{
+			_putchar(aski[i]);
+			i--;
+			counter++;
+		}
 	}
 	else
 	{
-		integer = num;
+		_putchar('0');
+		counter++;
 	}
-	y = integer;
-	x = 1;
-
-	while (y > 9)
-	{
-		y /= 10;
-		x *= 10;
-	}
-	for (; x >= 1; x /= 10)
-	{
-		len += _putchar(((integer / x) % 10) + '0');
-	}
-	return (len);
+	return (counter);
 }

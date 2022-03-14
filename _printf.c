@@ -5,10 +5,10 @@
 
 /**
  * get_identifier - gets the correct identifier to print
- * @format: type of format
+ * @formatt: type of format
  * Return: pointer to function
  */
-int (*get_identifier(char format))(va_list)
+int (*get_identifier(char formatt))(va_list)
 {
 	print_f letter[] = {
 		{'c', c_printf},
@@ -21,7 +21,7 @@ int (*get_identifier(char format))(va_list)
 
 	for (i = 0; letter[i].string; i++)
 	{
-		if (format == letter[i].string)
+		if (formatt == letter[i].string)
 			return (letter[i].func);
 	}
 	return (NULL);
