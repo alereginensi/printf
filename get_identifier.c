@@ -9,6 +9,8 @@
  */
 int (*get_identifier(char *s))(int, int)
 {
+	int q = 0;
+
 	print_f letter[] = {
 		{'c', c_printf},
 		{'s', s_printf},
@@ -19,3 +21,13 @@ int (*get_identifier(char *s))(int, int)
 		{'r', reverse_printf},
 		{'\0', NULL},
 };
+	while (letter[q].string != '\0')
+	{
+		if (format == letter[q].string)
+		{
+			return (letter[q].func);
+		}
+		q++;
+	}
+	return (NULL);
+}

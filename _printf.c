@@ -7,50 +7,37 @@
  */
 int _printf(const char *format, ...)
 {
-	print_f letter[] = {
-		{'c', c_printf},
-		{'s', s_printf},
-		{'i', number_printf},
-		{'d', number_printf},
-		{'u', unsigned_printf},
-		{'r', reverse_printf},
-		{'\0', NULL},
-	};
-        int q, j;
-        va_list valist;
+	int q, j;
+	va_list valist;
+	q = 0;
 
 	va_start(valist, format);
+	if (format == NULL)
+		return (-1);
 
 	j = 0;
 	while (format != NULL && format[j] != '\0')
 	{
 		if (format[j] == '%')
 		{
+			if (format[j + 1] == '\0')
+			{
+				return (-1);
+			}
 			if (format[j + 1] == '%')
 			{
-				_putchar(format[j + 1]);
-					j++;
-					break;
+				_putchar(format[j + 1], j++, q++;
 			}
-			q = 0;
-			while (letter[q].string != '\0')
+			else
 			{
-				if (format[j + 1] == letter[q].string)
-				{
-					letter[q].func(valist);
-					j++;
-					break;
-				}
-				q++;
+				func = (*get_identifier(format[j +1]));
+				break;
 			}
-			j++;
-		}
-		else
-		{
-			_putchar(format[j]);
-			j++;
+			} j++;
 	}
+	else
+		_putchar(format[j]), j++, q++;
 	}
 	va_end(valist);
-	return (j - 1);
+	return (j);
 }
