@@ -2,16 +2,16 @@
 
 /**
  * number_printf - prints an integer
- * @i: integer to print
+ * @arg: integer to print
  *
  * Return: length
  */
-int number_printf(va_list i)
+int number_printf(va_list arg)
 {
 	int integer, y, x;
 	int num, len;
 
-	num = va_arg(i, int);
+	num = va_arg(arg, int);
 
 	if (num < 0)
 	{
