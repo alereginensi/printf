@@ -15,7 +15,7 @@ int number_printf(va_list arg)
 
 	if (num < 0)
 	{
-		_putchar(45);
+		_putchar('-');
 		counter++;
 		unsnum = -num;
 	}

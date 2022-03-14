@@ -9,8 +9,7 @@
 int c_printf(va_list arg)
 {
 	char c = va_arg(arg, int);
-	_putchar(c);
-	return (1);
+	return (_putchar(c));
 }
 
 /**
@@ -28,8 +27,7 @@ int s_printf(va_list arg)
 	str = va_arg(arg, char *);
 	if (str == NULL)
 	{
-		write(1, "(nil)", 5);
-		return (5);
+		str = "(null)";
 	}
 	for (i = 0; str[i] != '\0'; i++)
 	{
