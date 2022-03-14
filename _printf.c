@@ -1,4 +1,7 @@
 #include "main.h"
+#include <stdarg.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * get_identifier - gets the correct identifier to print
@@ -46,8 +49,8 @@ int _printf(const char *format, ...)
 			if (format [i + 1] == '%')
 			{
 				_putchar(format[i]);
-				i++;
 				counter++;
+				continue;
 			}
 			else if (format[i + 1] == '\0')
 			{
@@ -69,7 +72,7 @@ int _printf(const char *format, ...)
 					counter++;
 				}
 			}
-		}
+		}	
 	}
 	va_end(arg);
 	return (counter);

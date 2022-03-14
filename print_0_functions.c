@@ -27,7 +27,8 @@ int s_printf(va_list arg)
 	str = va_arg(arg, char *);
 	if (str == NULL)
 	{
-		return (0);
+		write(1, "(nil)", 5);
+		return (5);
 	}
 	for (i = 0; str[i] != '\0'; i++)
 	{
