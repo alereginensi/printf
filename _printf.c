@@ -12,8 +12,6 @@ int (*get_identifier(char format))(va_list)
 		{'s', s_printf},
 		{'i', number_printf},
 		{'d', number_printf},
-		{'u', unsigned_printf},
-		{'r', reverse_printf},
 		{'\0', NULL},
 	};
 	int i = 0;
@@ -24,6 +22,7 @@ int (*get_identifier(char format))(va_list)
 			break;
 	}
 	return (letter[i].func);
+}
 
 /**
  * _printf - produces output according to a format.
@@ -52,18 +51,26 @@ int _printf(const char *format, ...)
 			}
 			else if (format[i + 1] == '\0')
 			{
-				format = get_identifier(format[i + 1]);
+				_putchar(format[i]);
 				counter++;
 				return (counter);
 			}
 			else
 			{
-				_putchar(format[i]);
-				counter++;
+				func = get_identifier(format[i + 1]);
+				if (func != NULL)
+				{
+					counter += func(arg);
+					i++;
+				}
+				else
+				{
+					_putchar(format[i]);
+					counter++;
+				}
 			}
 		}
 	}
 	va_end(arg);
 	return (counter);
-}
 }
