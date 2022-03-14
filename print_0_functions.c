@@ -36,15 +36,3 @@ int s_printf(va_list s)
 
 	return (i);
 }
-
-/**
- * percent_printf - prints a percent symbol
- * @percent: symbol
- *
- * Return: 1
- */
-int percent_printf(void)
-{
-	_putchar('%');
-	return (1);
-}

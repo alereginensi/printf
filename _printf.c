@@ -10,7 +10,6 @@ int _printf(const char *format, ...)
 	print_f letter[] = {
 		{'c', c_printf},
 		{'s', s_printf},
-		{'%', percent_printf},
 		{'i', number_printf},
 		{'d', number_printf},
 		{'u', unsigned_printf},
@@ -27,6 +26,12 @@ int _printf(const char *format, ...)
 	{
 		if (format[j] == '%')
 		{
+			if (format[j + 1] == '%')
+			{
+				_putchar(format[j + 1]);
+					j++;
+					break;
+			}
 			q = 0;
 			while (letter[q].string != '\0')
 			{
