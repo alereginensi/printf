@@ -7,13 +7,13 @@
  * Return: length
  */
 
-int reverse_printf(va_list s)
+int reverse_printf(va_list r)
 {
 	char *str;
 	int i = 0;
 	int j = 0;
 
-	str = va_arg(s, char *);
+	str = va_arg(r, char *);
 
 	while (str[i] != '\0')
 	{
