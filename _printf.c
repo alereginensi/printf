@@ -22,9 +22,9 @@ int (*get_identifier(char format))(va_list)
 	for (i = 0; letter[i].string; i++)
 	{
 		if (format == letter[i].string)
-			break;
+			return (letter[i].func);
 	}
-	return (letter[i].func);
+	return (NULL);
 }
 
 /**
@@ -72,8 +72,14 @@ int _printf(const char *format, ...)
 					counter++;
 				}
 			}
+		}
+		else
+		{
+			_putchar(format[i]);
+			counter++;
 		}	
 	}
 	va_end(arg);
+	_putchar('\n');
 	return (counter);
 }
