@@ -10,7 +10,6 @@ int (*get_identifier(char format))(va_list)
 	print_f letter[] = {
 		{'c', c_printf},
 		{'s', s_printf},
-		{'%', percent_printf},
 		{'i', number_printf},
 		{'d', number_printf},
 		{'u', unsigned_printf},
@@ -66,4 +65,5 @@ int _printf(const char *format, ...)
 	}
 	va_end(arg);
 	return (counter);
+}
 }
