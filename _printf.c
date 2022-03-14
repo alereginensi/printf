@@ -52,8 +52,7 @@ int _printf(const char *format, ...)
 			}
 			else if (format[i + 1] == '\0')
 			{
-				_putchar(format[i]), counter++;
-				return (counter);
+				return (-1);
 			}
 			else
 			{
