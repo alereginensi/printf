@@ -20,22 +20,19 @@ typedef struct print
 	int (*func)(va_list);
 } print_f;
 
+int _printf(const char *format, ...);
 int _putchar(char c);
 
-int _printf(const char *format, ...);
+int c_printf(va_list arg);
 
-int c_printf(va_list c);
+int s_printf(va_list arg);
 
-int s_printf(va_list s);
+int number_printf(va_list arg);
 
-int percent_printf(void);
+int number_printf(va_list arg);
 
-int number_printf(va_list i);
+int unsigned_printf(va_list arg);
 
-int number_printf(va_list d);
-
-int unsigned_printf(va_list u);
-
-int reverse_printf(va_list r);
+int reverse_printf(va_list arg);
 
 #endif

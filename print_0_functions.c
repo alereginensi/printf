@@ -2,29 +2,29 @@
 
 /**
  * c_printf - Prints a character
- * @c: Character
+ * @arg: Character
  *
  * Return: 1
  */
-int c_printf(va_list c)
+int c_printf(va_list arg)
 {
-	_putchar(va_arg(c, int));
+	_putchar(va_arg(arg, int));
 	return (1);
 }
 
 /**
  * s_printf - prints a string
- * @s: string to print
+ * @arg: string to print
  *
  * Return: length of string
  */
 
-int s_printf(va_list s)
+int s_printf(va_list arg)
 {
 	char *str;
 	int i = 0;
 
-	str = va_arg(s, char *);
+	str = va_arg(arg, char *);
 	if (str == NULL)
 	{
 		return (0);

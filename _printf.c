@@ -1,4 +1,31 @@
 #include "main.h"
+
+/**
+ * get_identifier - gets the correct identifier to print
+ * @format: type of format
+ * Return: pointer to function
+ */
+int (*get_identifier(char format))(va_list)
+{
+	print_f letter[] = {
+		{'c', c_printf},
+		{'s', s_printf},
+		{'%', percent_printf},
+		{'i', number_printf},
+		{'d', number_printf},
+		{'u', unsigned_printf},
+		{'r', reverse_printf},
+		{'\0', NULL},
+	};
+	int i = 0;
+
+	for (i = 0; letter[i].string; i++)
+	{
+		if (format == letter[i].string)
+			break;
+	}
+	return (letter[i].func);
+
 /**
  * _printf - produces output according to a format.
  * @format: list of arguments tpes passed to the function.
@@ -7,37 +34,36 @@
  */
 int _printf(const char *format, ...)
 {
-	int q, j;
-	va_list valist;
-	q = 0;
+	va_list arg;
+	int i = 0, counter = 0;
+	inf (*func)(va_list);
 
-	va_start(valist, format);
-	if (format == NULL)
+	if (!format || (format[0] == '%' && format [1] == '\0'))
 		return (-1);
-
-	j = 0;
-	while (format != NULL && format[j] != '\0')
+	va_start(arg, format);
+	for (; format && format[i]; i++)
 	{
-		if (format[j] == '%')
+		if (format[i] == '%')
 		{
-			if (format[j + 1] == '\0')
+			if (format [i + 1] == '%')
 			{
-				return (-1);
+				_putchar(format[i]);
+				i++;
+				counter++;
 			}
-			if (format[j + 1] == '%')
+			else if (format[i + 1] == '\0')
 			{
-				_putchar(format[j + 1], j++, q++;
+				format = get_identifier(format[i + 1])
+				counter++;
+				return (counter);
 			}
 			else
 			{
-				func = (*get_identifier(format[j +1]));
-				break;
+				_putchar(format[i]);
+				counter++;
 			}
-			} j++;
+		}
 	}
-	else
-		_putchar(format[j]), j++, q++;
-	}
-	va_end(valist);
-	return (j);
+	va_end(arg);
+	return (counter);
 }
