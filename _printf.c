@@ -18,6 +18,7 @@ int (*get_identifier(char formatt))(va_list)
 		{'d', number_printf},
 		{'r', reverse_printf},
 		{'u', unsigned_printf},
+		{'R', rot13_printf},
 		{'\0', NULL},
 	};
 	int i = 0;
