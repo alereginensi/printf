@@ -5,7 +5,7 @@
  * @arg: string adress
  * Return: int
  */
-char rot13_printf(va_list arg)
+int rot13_printf(va_list arg)
 {
 	int i, j, counter = 0;
 	char str1[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
