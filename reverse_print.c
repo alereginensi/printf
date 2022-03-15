@@ -4,6 +4,7 @@
  * reverse_printf.c - prints a reversed string
  * @s: string to reverse
  *
+ *
  * Return: length
  */
 
