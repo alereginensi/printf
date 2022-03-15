@@ -32,41 +32,41 @@ int (*get_identifier(char formatt))(va_list)
  * @format: list of arguments tpes passed to the function.
  * Return: Same as printf standard functions
  */
-int _printf(const char *format, ...)
+int _printf(char *format, ...)
 {
+	int i = 0, counter = 0;
+
 	va_list arg;
-	int i, counter = 0;
 	int (*func)(va_list);
 
-	va_start(arg, format);
 	if (format == NULL)
 		return (-1);
-	i = 0;
-	while (format != NULL && format[i] != '\0')
+	va_start(arg, format);
+	while (format[i] != '\0')
 	{
-		if (format[i] == '%')
+		while (format[i] != '%' && format[i] != '\0')
 		{
-			if (format[i + 1] == '\0')
-			{
-				return (-1);
-			}
-			else if (format[i + 1] == '%')
-			{
-				_putchar(format[i + 1]), i++, counter++;
-			}
-			else
-			{
-				func = (*get_identifier(format[i + 1]));
-				if (func != NULL)
-				{
-					counter += func(arg), i++;
-				}
-				else
-					_putchar(format[i]), i++;
-			} i++;
+			_putchar(format[i]);
+			counter++;
+			i++;
 		}
+		if (format[i] == '\0')
+			return (counter);
+		func = validation(&format[i + 1]);
+		if (func != NULL)
+		{
+			counter += func(arg);
+			i += 2;
+			continue;
+		}
+		if (format[i + 1] == '\0')
+			return (-1);
+		_putchar(format[i]);
+		counter++;
+		if (format[i + 1] == '%')
+			i += 2;
 		else
-			_putchar(format[i]), i++, counter++;
+			i++;
 	}
 	va_end(arg);
 	return (counter);
