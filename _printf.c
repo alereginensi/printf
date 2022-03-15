@@ -6,6 +6,7 @@
 /**
  * get_identifier - gets the correct identifier to print
  * @formatt: type of format
+ *
  * Return: pointer to function
  */
 int (*get_identifier(char formatt))(va_list)

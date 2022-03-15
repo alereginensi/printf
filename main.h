@@ -11,7 +11,7 @@
  * @string: string passed by argument
  * @func: function type
  *
- * Description: Above
+ * Description: above
  */
 
 typedef struct print

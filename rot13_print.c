@@ -2,8 +2,8 @@
 
 /**
  * rot13 - encodes a string into ROT13
- * @str: string input value
- * Return: char pointer
+ * @arg: string adress
+ * Return: int
  */
 char rot13_printf(va_list arg)
 {
