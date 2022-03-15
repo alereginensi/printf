@@ -35,38 +35,40 @@ int (*get_identifier(char formatt))(va_list)
 int _printf(const char *format, ...)
 {
 	va_list arg;
-	int i = 0, counter = 0;
+	int i, counter = 0;
 	int (*func)(va_list);
 
-	if (!format || (format[0] == '%' && format[1] == '\0'))
+	va_start(arg, format)
+	if (format == NULL)
 		return (-1);
-	va_start(arg, format);
-	for (; format && format[i]; i++)
+	i = 0;
+	while (format != NULL && format[i] != '\0')
 	{
 		if (format[i] == '%')
 		{
-			if (format[i + 1] == '%')
-			{
-				_putchar(format[i]), counter++;
-				continue;
-			}
-			else if (format[i + 1] == '\0')
+			if (format[i + 1] == '\0')
 			{
 				return (-1);
 			}
+
+			else if (format[i + 1 == '%')
+			{
+			_putchar(format[i + 1]), i++, counter++;
+			}
 			else
 			{
-				func = get_identifier(format[i + 1]);
+				func = (*get_identifier(format[i + 1]));
 				if (func != NULL)
 				{
-					counter += func(arg), i++;
+					counter += func(list), i++;
 				}
 				else
-				{
-					_putchar(format[i]), counter++;		}	}	}
+					_putchar(format[i]), i++;
+			} i++;
+		}
 		else
-		{
-			_putchar(format[i]), counter++;		}	}
-	va_end(arg);
+			_putchar(format[i]), i++; counter++;
+	}
+	va_end(list)
 	return (counter);
 }
