@@ -36,4 +36,6 @@ int unsigned_printf(va_list arg);
 
 int reverse_printf(va_list arg);
 
+int rot13_printf(va_list arg);
+
 #endif
