@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 	int i, counter = 0;
 	int (*func)(va_list);
 
-	va_start(arg, format)
+	va_start(arg, format);
 	if (format == NULL)
 		return (-1);
 	i = 0;
@@ -50,25 +50,24 @@ int _printf(const char *format, ...)
 			{
 				return (-1);
 			}
-
-			else if (format[i + 1 == '%')
+			else if (format[i + 1] == '%')
 			{
-			_putchar(format[i + 1]), i++, counter++;
+				_putchar(format[i + 1]), i++, counter++;
 			}
 			else
 			{
 				func = (*get_identifier(format[i + 1]));
 				if (func != NULL)
 				{
-					counter += func(list), i++;
+					counter += func(arg), i++;
 				}
 				else
 					_putchar(format[i]), i++;
 			} i++;
 		}
 		else
-			_putchar(format[i]), i++; counter++;
+			_putchar(format[i]), i++, counter++;
 	}
-	va_end(list)
+	va_end(arg);
 	return (counter);
 }
