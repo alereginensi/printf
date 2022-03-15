@@ -44,30 +44,25 @@ int _printf(const char *format, ...)
 	va_start(arg, format);
 	while (format[i] != '\0')
 	{
-		while (format[i] != '%' && format[i] != '\0')
+		for (; format[i] != '%' && format[i] != '\0'; i++)
 		{
-			_putchar(format[i]);
-			counter++;
-			i++;
+			_putchar(format[i]), counter++;
 		}
 		if (format[i] == '\0')
 			return (counter);
 		func = *get_identifier(format[i + 1]);
 		if (func != NULL)
 		{
-			counter += func(arg);
-			i += 2;
+			counter += func(arg), i += 2;
 			continue;
 		}
 		if (format[i + 1] == '\0')
 			return (-1);
-		_putchar(format[i]);
-		counter++;
+		_putchar(format[i]), counter++;
 		if (format[i + 1] == '%')
 			i += 2;
 		else
-			i++;
-	}
+			i++;	}
 	va_end(arg);
 	return (counter);
 }
