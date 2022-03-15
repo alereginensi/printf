@@ -32,7 +32,7 @@ int (*get_identifier(char formatt))(va_list)
  * @format: list of arguments tpes passed to the function.
  * Return: Same as printf standard functions
  */
-int _printf(char *format, ...)
+int _printf(const char *format, ...)
 {
 	int i = 0, counter = 0;
 
@@ -52,7 +52,7 @@ int _printf(char *format, ...)
 		}
 		if (format[i] == '\0')
 			return (counter);
-		func = validation(&format[i + 1]);
+		func = *get_identifier(format[i + 1]);
 		if (func != NULL)
 		{
 			counter += func(arg);
