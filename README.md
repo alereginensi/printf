@@ -28,3 +28,6 @@
 
 ### man_3_printf ###
 * This is our manual page created for our function
+
+### Flowchart of the project ###
+![alt text](http://gyazo.com/e11bd19ff0303c56e0f6262ea71a56b0/to/img.png)
