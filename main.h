@@ -21,6 +21,7 @@ typedef struct print
 } print_f;
 
 int _printf(const char *format, ...);
+
 int _putchar(char c);
 
 int c_printf(va_list arg);
