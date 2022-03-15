@@ -16,7 +16,7 @@ int (*get_identifier(char formatt))(va_list)
 		{'s', s_printf},
 		{'i', number_printf},
 		{'d', number_printf},
-		{'r', reverse_printf},
+		/**{'r', reverse_printf},*/
 		{'u', unsigned_printf},
 		{'\0', NULL},
 	};
