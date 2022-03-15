@@ -30,4 +30,5 @@
 * This is our manual page created for our function
 
 ### Flowchart of the project ###
-![alt text](http://gyazo.com/e11bd19ff0303c56e0f6262ea71a56b0/to/img.png)
+![flowchart printf](https://user-images.githubusercontent.com/98028527/158488084-87e9ca4f-f120-4c38-a9ff-fcdf6547236e.png)
+
