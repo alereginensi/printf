@@ -1,6 +1,6 @@
 # _printf project #
 
-## Made by Martín De Francesco & Alejandro Reginensi ##
+## Made by Martín De Francesco & Alejandro Reginensi. ##
 
 ### Objective ###
 * Recreate the printf function from the C Standard Library *
